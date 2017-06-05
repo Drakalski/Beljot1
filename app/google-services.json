@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "403350795881",
+    "firebase_url": "https://beljot-d4bfb.firebaseio.com",
+    "project_id": "beljot-d4bfb",
+    "storage_bucket": "beljot-d4bfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403350795881:android:d381fe1b410e1b5c",
+        "android_client_info": {
+          "package_name": "com.example.drakalski.beljot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403350795881-2ntpo7d3e1o4va3rqs0h1oeibrr6je9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.drakalski.beljot",
+            "certificate_hash": "63fd8d010d1585b016771276d41578b743cb1239"
+          }
+        },
+        {
+          "client_id": "403350795881-31j72a14v4qtgg29qepgg3hr24g6jc98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU-S-v9zWgkV4whRoHKDJfsk55g3BMccs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403350795881-31j72a14v4qtgg29qepgg3hr24g6jc98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

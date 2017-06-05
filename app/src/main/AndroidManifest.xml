@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.drakalski.beljot">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".Notifications">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name=".InstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+            </intent-filter>
+        </service>
+        <activity android:name=".Signup" />
+        <activity android:name=".Menu" />
+        <activity android:name=".NewGame" />
+        <activity
+            android:name=".PopNames"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".Bonus"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".GamePoints"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".PopPlayerNames"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".PopTrump"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".PopWinner" />
+        <activity android:name=".Win"></activity>
+    </application>
+
+</manifest>
