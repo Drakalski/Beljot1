@@ -39,7 +39,6 @@ public class Menu extends AppCompatActivity {
         // textviewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnNewGame = (Button) findViewById(R.id.btnNewGame);
-        btnFriends = (Button) findViewById(R.id.btnWins);
 
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -62,16 +61,7 @@ public class Menu extends AppCompatActivity {
 
 
         });
-        btnFriends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(getApplicationContext(), Win.class));
-            }
-
-
-        });
-
+   
 
     }
 }
