@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,26 +35,36 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
             </intent-filter>
         </service>
-        <activity android:name=".Signup" />
-        <activity android:name=".Menu" />
-        <activity android:name=".NewGame" />
+        <activity android:name=".Signup"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Menu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewGame"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PopNames"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Bonus"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".GamePoints"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PopPlayerNames"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PopTrump"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity android:name=".PopWinner" />
-        <activity android:name=".Win"></activity>
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PopWinner"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Win"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

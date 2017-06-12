@@ -39,7 +39,7 @@ public class Notifications extends FirebaseMessagingService {
 
     private void sendNotification(NotificationData notificationData) {
 
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         intent.putExtra(NotificationData.TEXT, notificationData.getTextMessage());
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

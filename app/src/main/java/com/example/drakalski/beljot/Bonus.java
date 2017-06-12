@@ -14,11 +14,11 @@ import android.widget.TextView;
 public class Bonus extends AppCompatActivity {
 
 
-    boolean teamOneBool = true;
-    boolean teamTwoBool = true;
+   public boolean teamOneBool = true;
+   public boolean teamTwoBool = true;
 
-    boolean teamOneBelote = true;
-    boolean teamTwoBelote = true;
+   public boolean teamOneBelote = true;
+   public boolean teamTwoBelote = true;
 
     int twentyTeamO = 0;
     int fiftyTeamO = 0;
@@ -282,149 +282,25 @@ public class Bonus extends AppCompatActivity {
 
     }
 
-//    private void clickPopUp(){
-//
-//
-//         Intent intent = new Intent();
-//
-//        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
-//
-//        alert.setTitle("Points");
-//        alert.setMessage("Add the points of the Trump Team");
-//
-//        final EditText input = new EditText(this);
-//        alert.setView(input);
-//
-//        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int whichButton) {
-//
-//                if(trumpBoolTO) {
-//
-//                    int x = Integer.parseInt(String.valueOf(input.getText()));
-//                    teamOnePoints = teamOnePoints + x + totalBonusTO;
-//                    teamTwoPoints = 162 - teamOnePoints + totalBonusTT;
-//
-//                    if (teamOnePoints >= teamTwoPoints) {
-//
-//
-//                        if(boolSingleGame) {
-//                            intent.putExtra("teamOnePoints", teamOnePoints);
-//                            intent.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent.putExtra("totalBonusTO", totalBonusTO);
-//                            intent.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent);
-//                        }
-//                        else if(boolTournGame)
-//                        {
-//                            intent2.putExtra("teamOnePoints", teamOnePoints);
-//                            intent2.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent2.putExtra("totalBonusTO", totalBonusTO);
-//                            intent2.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent2);
-//                        }
-//                    }
-//                    else if (teamOnePoints < teamTwoPoints)
-//                    {
-//                        teamTwoPoints = teamTwoPoints + teamOnePoints;
-//                        totalBonusTO =0;
-//                        teamOnePoints = 0;
-//                        if(boolSingleGame) {
-//                            intent.putExtra("teamOnePoints", teamOnePoints);
-//                            intent.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent.putExtra("totalBonusTO", totalBonusTO);
-//                            intent.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent);
-//                        }
-//                        else if(boolTournGame)
-//                        {
-//                            intent2.putExtra("teamOnePoints", teamOnePoints);
-//                            intent2.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent2.putExtra("totalBonusTO", totalBonusTO);
-//                            intent2.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent2);
-//                        }
-//
-//                    }
-//
-//
-//
-//                }
-//                else if(trumpBoolTT)
-//                {
-//                    int x = Integer.parseInt(String.valueOf(input.getText()));
-//                    teamTwoPoints = teamTwoPoints + x + totalBonusTT;
-//                    teamOnePoints = 162 - teamTwoPoints + totalBonusTO;
-//
-//                    if (teamTwoPoints >= teamOnePoints) {
-//
-//                        if(boolSingleGame) {
-//                            intent.putExtra("teamOnePoints", teamOnePoints);
-//                            intent.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent.putExtra("totalBonusTO", totalBonusTO);
-//                            intent.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent);
-//                        }
-//                        else if(boolTournGame)
-//                        {
-//                            intent2.putExtra("teamOnePoints", teamOnePoints);
-//                            intent2.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent2.putExtra("totalBonusTO", totalBonusTO);
-//                            intent2.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent2);
-//                        }
-//
-//                    }
-//                    else if (teamTwoPoints < teamOnePoints)
-//                    {
-//                        teamOnePoints = teamOnePoints + teamTwoPoints;
-//                        totalBonusTT =0;
-//                        teamTwoPoints = 0;
-//                        if(boolSingleGame) {
-//                            intent.putExtra("teamOnePoints", teamOnePoints);
-//                            intent.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent.putExtra("totalBonusTO", totalBonusTO);
-//                            intent.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent);
-//                        }
-//                        else if(boolTournGame)
-//                        {
-//                            intent2.putExtra("teamOnePoints", teamOnePoints);
-//                            intent2.putExtra("teamTwoPoints", teamTwoPoints);
-//                            intent2.putExtra("totalBonusTO", totalBonusTO);
-//                            intent2.putExtra("totalBonusTT", totalBonusTT);
-//                            startActivity(intent2);
-//                        }
-//
-//                    }
-//
-//
-//                }
-//            }
-//        });
-//
-//        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int whichButton) {
-//                return;
-//            }
-//        });
-//
-//        alert.show();
-//    }
-//
+
 
     private void clickTwentyTO(){
         if(twentyTeamO < 80)
         {
             twentyTeamO = twentyTeamO+20;
             totalBonusTO = totalBonusTO+20;
-             TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
+            TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
         }
         else
         {
             totalBonusTO = totalBonusTO - twentyTeamO;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
             twentyTeamO=0;
-             TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
+            TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
         }
     }
@@ -440,6 +316,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTO = totalBonusTO - fiftyTeamO;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
             fiftyTeamO=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
@@ -459,6 +339,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTO = totalBonusTO - hundredTeamO;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
             hundredTeamO=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
@@ -476,6 +360,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTO = totalBonusTO - fourSameTeamO;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
             fourSameTeamO=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
@@ -483,9 +371,9 @@ public class Bonus extends AppCompatActivity {
         }
     }
     private void clickJacksTO(){
-        if(jacksTeamO < 200)
+        if(jacksTeamO < 199)
         {
-            twentyTeamO = twentyTeamO+200;
+            jacksTeamO = jacksTeamO+200;
             totalBonusTO = totalBonusTO+200;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
@@ -493,6 +381,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTO = totalBonusTO - jacksTeamO;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
             jacksTeamO=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
@@ -510,7 +402,11 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTO = totalBonusTO - ninesTeamO;
-            twentyTeamO=0;
+            if(totalBonusTO == 0 && beloteTeamO == 0)
+            {
+                teamTwoBool = true;
+            }
+            ninesTeamO=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamOne);
             textViewToChange.setText(Integer.toString(totalBonusTO));
 
@@ -545,6 +441,10 @@ public class Bonus extends AppCompatActivity {
         {
             totalBonusTT = totalBonusTT - twentyTeamT;
             twentyTeamT=0;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
 
@@ -561,6 +461,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTT = totalBonusTT - fiftyTeamT;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
             fiftyTeamT=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
@@ -578,6 +482,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTT = totalBonusTT - hundredTeamT;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
             hundredTeamT=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
@@ -595,6 +503,10 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTT = totalBonusTT - fourSameTeamT;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
             fourSameTeamT=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
@@ -604,14 +516,18 @@ public class Bonus extends AppCompatActivity {
     private void clickJacksTT(){
         if(jacksTeamT < 200)
         {
-            twentyTeamT = twentyTeamT+200;
+            jacksTeamT = jacksTeamT+200;
             totalBonusTT = totalBonusTT+200;
-             TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
+            TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
         }
         else
         {
             totalBonusTT = totalBonusTT - jacksTeamT;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
             jacksTeamT=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
@@ -629,7 +545,11 @@ public class Bonus extends AppCompatActivity {
         else
         {
             totalBonusTT = totalBonusTT - ninesTeamT;
-            twentyTeamT=0;
+            if(totalBonusTT == 0 && beloteTeamT == 0)
+            {
+                teamOneBool = true;
+            }
+            ninesTeamT=0;
              TextView textViewToChange = (TextView) findViewById(R.id.vadenoTeamTwo);
             textViewToChange.setText(Integer.toString(totalBonusTT));
 

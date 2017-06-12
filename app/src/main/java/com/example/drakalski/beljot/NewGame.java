@@ -12,8 +12,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class NewGame extends AppCompatActivity {
 
+    private int x = 0;
     private FirebaseDatabase fdb = FirebaseDatabase.getInstance();
-
     private int teamOneTotal = 0;
     private int teamTwoTotal = 0;
 
@@ -230,6 +230,7 @@ public class NewGame extends AppCompatActivity {
                     textViewT2Total.setText("0");
                     Intent intent = new Intent(getApplicationContext(), PopWinner.class);
                     intent.putExtra("Winner Name", "Team One Is The Winner!");
+                    intent.putExtra("Point", 1);
                     startActivity(intent);
                 }
                 else if(num2 >= 1001)
@@ -239,6 +240,8 @@ public class NewGame extends AppCompatActivity {
                     textViewT2Total.setText("0");
                     Intent intent = new Intent(getApplicationContext(), PopWinner.class);
                     intent.putExtra("Winner Name", "Team Two Is The Winner!");
+                    x=2;
+                    intent.putExtra("Point", 2);
                     startActivity(intent);
                 }
                 textViewT2Total.setText(String.valueOf(num2));
@@ -268,6 +271,8 @@ public class NewGame extends AppCompatActivity {
                     textViewT2Total.setText("0");
                     Intent intent = new Intent(getApplicationContext(), PopWinner.class);
                     intent.putExtra("Winner Name", "Team One Is The Winner!");
+                    x=1;
+                    intent.putExtra("Point", 1);
                     startActivity(intent);
                 }
                 else if(num2 >= 1001)
@@ -276,6 +281,8 @@ public class NewGame extends AppCompatActivity {
                     textViewT2Total.setText("0");
                     Intent intent = new Intent(getApplicationContext(), PopWinner.class);
                     intent.putExtra("Winner Name", "Team Two Is The Winner!");
+                    x=2;
+                    intent.putExtra("Point", 2);
                     startActivity(intent);
                 }
                 textViewT2Total.setText(String.valueOf(num2));

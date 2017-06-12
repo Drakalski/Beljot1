@@ -44,7 +44,6 @@ public class Menu extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
@@ -61,7 +60,7 @@ public class Menu extends AppCompatActivity {
 
 
         });
-   
+
 
     }
 }
